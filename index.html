@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Smart Notes</h1>
+        <div id="auth" style="display: none;">
+            <input type="text" id="username" placeholder="Username">
+            <button id="login">Login</button>
+        </div>
+        <div id="notes" style="display: none;">
+            <input type="text" id="note-title" placeholder="Title">
+            <textarea id="note-content" placeholder="Content"></textarea>
+            <button id="start-recording">Start Recording</button>
+            <button id="add-note">Add Note</button>
+            <input type="text" id="search-note" placeholder="Search notes">
+            <button id="toggle-dark-mode">Toggle Dark Mode</button>
+            <div id="note-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
