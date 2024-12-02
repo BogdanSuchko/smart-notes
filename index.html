@@ -3,23 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Notes</title>
+    <title data-i18n="title">Smart Notes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.10/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>Smart Notes</h1>
-        <div id="auth" style="display: none;">
-            <input type="text" id="username" placeholder="Username">
-            <button id="login">Login</button>
+        <h1 data-i18n="title">Smart Notes</h1>
+        <div id="auth">
+            <input type="text" id="username" data-i18n="[placeholder]username">
+            <button id="login" data-i18n="login">Login</button>
         </div>
-        <div id="notes" style="display: none;">
-            <input type="text" id="note-title" placeholder="Title">
-            <textarea id="note-content" placeholder="Content"></textarea>
-            <button id="start-recording">Start Recording</button>
-            <button id="add-note">Add Note</button>
-            <input type="text" id="search-note" placeholder="Search notes">
-            <button id="toggle-dark-mode">Toggle Dark Mode</button>
+        <div id="notes">
+            <div class="nav">
+                <input type="text" id="search-note" data-i18n="[placeholder]search">
+                <button id="toggle-dark-mode" data-i18n="toggleDarkMode">Toggle Dark Mode</button>
+                <button id="languageToggle" class="en">EN</button>
+                <button id="logout" data-i18n="logout">Logout</button>
+            </div>
+            <div class="note-form">
+                <input type="text" id="note-title" data-i18n="[placeholder]noteTitle">
+                <textarea id="note-content" data-i18n="[placeholder]noteContent"></textarea>
+                <input type="text" id="note-tags" data-i18n="[placeholder]tags">
+                <input type="file" id="note-attachments" multiple>
+                <div class="button-group">
+                    <button id="start-recording" data-i18n="startRecording">Start Recording</button>
+                    <button id="add-note" data-i18n="addNote">Add Note</button>
+                </div>
+            </div>
             <div id="note-list"></div>
         </div>
     </div>

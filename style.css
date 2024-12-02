@@ -1,18 +1,19 @@
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+	color: #333;
 	margin: 0;
 	padding: 0;
 	background-color: #f4f4f4;
-	color: #333;
 }
 
-	body.dark-mode {
-		background-color: #333;
-		color: #f4f4f4;
-	}
+body.dark-mode {
+	background-color: #333;
+	color: #f4f4f4;
+}
 
 #app {
-	width: 80%;
+	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #fff;
@@ -20,65 +21,128 @@ body {
 	border-radius: 5px;
 }
 
-	#app.dark-mode {
-		background-color: #444;
-	}
+#app.dark-mode {
+	background-color: #444;
+}
 
 h1 {
+	color: #2c3e50;
 	text-align: center;
-	color: #333;
+	margin-bottom: 30px;
 }
 
 #app.dark-mode h1 {
 	color: #f4f4f4;
 }
 
-#auth, #notes {
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 20px;
+	flex-wrap: wrap;
 }
 
-input, textarea {
+#toggle-dark-mode {
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+#languageToggle {
+	margin-left: 10px;
+}
+
+.attachments {
+	margin-top: 10px;
+}
+
+.attachment {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+}
+
+.attachment-link {
+	color: #3498db;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.attachment-link:hover {
+	text-decoration: underline;
+}
+
+#app.dark-mode .attachment {
+	background-color: #444;
+}
+
+#app.dark-mode .attachment-link {
+	color: #5dade2;
+}
+
+.delete-attachment {
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.delete-attachment:hover {
+	background-color: #c0392b;
+}
+
+input[type="text"], textarea, select {
 	width: 100%;
 	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	background-color: #fff;
-	color: #333;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
-#app.dark-mode input, #app.dark-mode textarea {
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+#app.dark-mode input, #app.dark-mode textarea, #app.dark-mode select {
 	background-color: #555;
 	color: #f4f4f4;
 	border-color: #777;
 }
 
 button {
-	padding: 10px 20px;
-	margin: 10px 0;
+	background-color: #3498db;
+	color: white;
 	border: none;
-	border-radius: 5px;
-	background-color: #007BFF;
-	color: #fff;
+	padding: 10px 20px;
 	cursor: pointer;
+	border-radius: 4px;
 	transition: background-color 0.3s;
+	margin-right: 10px;
 }
 
-	button:hover {
-		background-color: #0056b3;
-	}
+button:hover {
+	background-color: #2980b9;
+}
 
 #note-list {
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
-	#note-list div {
-		background-color: #f9f9f9;
-		padding: 10px;
-		margin-bottom: 10px;
-		border-radius: 5px;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-	}
+#note-list div {
+	background-color: #f9f9f9;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
 #app.dark-mode #note-list div {
 	background-color: #555;
@@ -95,10 +159,62 @@ button {
 }
 
 #note-list p {
-	margin: 0;
+	margin: 0 0 10px 0;
 	color: #666;
 }
 
 #app.dark-mode #note-list p {
 	color: #ccc;
+}
+
+#languageToggle {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#languageToggle.en {
+	background-color: #4CAF50;
+	color: white;
+}
+
+#languageToggle.ru {
+	background-color: #f44336;
+	color: white;
+}
+
+.note-form {
+	background-color: #f0f0f0;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+#app.dark-mode .note-form {
+	background-color: #555;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+#auth, #notes {
+	margin-top: 20px;
+}
+
+#search-note {
+	width: 200px;
+}
+
+#logout {
+	background-color: #e74c3c;
+	color: white;
+	margin-left: 10px;
+}
+
+#logout:hover {
+	background-color: #c0392b;
 }
